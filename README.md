@@ -1,5 +1,5 @@
-## typescript - koa - starter
-typescript - koa - typeorm web app
+## Typescript - Koa - Starter
+使用 Typescript 构建 Koa 项目实践
 
 ## 快速开始
 
@@ -31,7 +31,7 @@ $ npm run start
 └── tslint                  ---  TS 检查
 ```
 
-## 特性
+## 项目特性
 
 - Typescript 强类型
 
