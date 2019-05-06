@@ -3,13 +3,13 @@ typescript - koa - typeorm web app
 
 ## 快速开始
 
-#### 安装依赖
+- 安装依赖
 
 ```bash
 $ yarn install
 ```
 
-#### 启动工程
+- 启动工程
 
 ```bash
 $ npm run start
@@ -35,7 +35,11 @@ $ npm run start
 ## 特性
 
 - Typescript 强类型
+
 - typeorm 对象关系映射器
+
 - mysql 数据库
+
 - routing-controllers 使用装饰器的方式来进行koa-router的开发
+
 - nodemon 守护进程
