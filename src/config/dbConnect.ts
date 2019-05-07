@@ -5,7 +5,7 @@ const parentDir = join(__dirname, '..');
 
 const connectionOpts: ConnectionOptions = {
   type: 'mysql',
-  host: '39.107.108.134',
+  host: 'domain',
   port: 3306,
   username: 'root',
   password: '123456@abc',

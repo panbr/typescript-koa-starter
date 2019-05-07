@@ -1,5 +1,5 @@
 import app from './app';
-import dbConnect from './db/database.connection';
+import dbConnect from './config/dbConnect';
 import { config } from './config/config';
 
 dbConnect

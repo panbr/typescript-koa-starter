@@ -20,7 +20,7 @@ $ npm run start
 ```
 ├── src
 │   ├── controllers         ---  路由控制器
-│   ├── db                  ---  数据库连接配置
+│   ├── config              ---  配置信息
 │   ├── entity              ---  数据实体，数据库模型文件
 │   ├── utils               ---  工具集
 │   ├── app.ts              ---  应用配置
