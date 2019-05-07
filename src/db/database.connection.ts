@@ -5,10 +5,10 @@ const parentDir = join(__dirname, '..');
 
 const connectionOpts: ConnectionOptions = {
   type: 'mysql',
-  host: '',
+  host: '39.107.108.134',
   port: 3306,
   username: 'root',
-  password: '',
+  password: '123456@abc',
   database: 'attence',
   entities: [
     `${parentDir}/**/*.entity.ts`,

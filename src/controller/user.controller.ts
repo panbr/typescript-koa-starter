@@ -17,7 +17,8 @@ export class UserController {
       const user = await userRepo.find();
       return new Response(ctx, user).success();
     } catch (error) {
-      return new Response(ctx, error).fail();
+      console.error(error);
+      return new Response(ctx, error.message).fail();
     }
   }
 
@@ -31,7 +32,8 @@ export class UserController {
       const user = await userRepo.findOne({userId});
       return new Response(ctx, user).success();
     } catch (error) {
-      return new Response(ctx, error).fail();
+      console.error(error);
+      return new Response(ctx, error.message).fail();
     }
   }
 
