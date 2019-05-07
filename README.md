@@ -45,8 +45,6 @@ $ npm run start
 
 ## 完善计划
 
-- Logging
-
 - Authentication
 
 - CORS
