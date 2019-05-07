@@ -5,6 +5,7 @@ import 'reflect-metadata';
 import {createKoaServer} from 'routing-controllers';
 import * as dotenv from 'dotenv';
 import * as winston from 'winston';
+import * as helmet from 'koa-helmet';
 import { logger } from './config/logger';
 
 // Load environment variables from .env file, where API keys and passwords are configured
@@ -13,6 +14,9 @@ dotenv.config({ path: '.env' });
 const app = createKoaServer({
   controllers: [__dirname + "/controller/*.controller.ts"]
 })
+
+// Provides important security headers to make your app more secure
+app.use(helmet());
 
 // Middleware
 app.use(bodyParser());
