@@ -41,7 +41,7 @@ $ npm run start
 
 - routing-controllers 使用装饰器的方式来进行koa-router的开发
 
-- nodemon 守护进程
+- nodemon 代码变动自动重启
 
 ## 完善计划
 
