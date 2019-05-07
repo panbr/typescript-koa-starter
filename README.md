@@ -43,6 +43,8 @@ $ npm run start
 
 - nodemon 代码变动自动重启
 
+- winston 记录日志
+
 ## 完善计划
 
 - Authentication
