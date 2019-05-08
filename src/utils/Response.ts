@@ -1,26 +1,20 @@
 import { Context } from 'koa';
 
-export default class Response {
-  private ctx: Context;
-  private data: object|string;
+export default new class {
+  constructor() {}
 
-  constructor(ctx: Context, data: object|string) {
-    this.ctx = ctx;
-    this.data = data;
-  }
-
-  success() {
-    return this.ctx.body = {
+  success(ctx: Context, data: object|string = null) {
+    return ctx.body = {
       status: 1,
       msg: 'success',
-      data: this.data,
+      data: data,
     }
   }
 
-  fail() {
-    return this.ctx.body = {
+  fail(ctx: Context, data: object|string = null) {
+    return ctx.body = {
       status: -1,
-      msg: this.data,
+      msg: data,
       data: '',
     }
   }

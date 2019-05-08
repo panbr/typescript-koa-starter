@@ -15,10 +15,10 @@ export class UserController {
     try {
       // Find the requested user.
       const user = await userRepo.find();
-      return new Response(ctx, user).success();
+      return Response.success(ctx, user);
     } catch (error) {
       console.error(error);
-      return new Response(ctx, error.message).fail();
+      return Response.fail(ctx, error.message);
     }
   }
 
@@ -30,10 +30,10 @@ export class UserController {
     try {
       // Find the requested user.
       const user = await userRepo.findOne({userId});
-      return new Response(ctx, user).success();
+      return Response.success(ctx, user);
     } catch (error) {
       console.error(error);
-      return new Response(ctx, error.message).fail();
+      return Response.fail(ctx, error.message);
     }
   }
 
@@ -49,7 +49,7 @@ export class UserController {
     await userRepo.save(user);
 
     // return
-    return new Response(ctx, user).success();
+    return Response.success(ctx, user);
   }
 
   @Delete("/:userId")
@@ -63,14 +63,14 @@ export class UserController {
     // If the user doesn't exist, then throw a 404.
     // This will be handled upstream by our custom error middleware.
     if (!user) {
-      return new Response(ctx, 'not found').fail();
+      return Response.fail(ctx, 'not found');
     }
 
     // Delete our user.
     await userRepo.delete(user);
 
     // return
-    return new Response(ctx, user).success();
+    return Response.success(ctx, user);
   }
 
   @Patch('/edit/:userId')
@@ -85,7 +85,7 @@ export class UserController {
     // If the user doesn't exist, then throw a 404.
     // This will be handled upstream by our custom error middleware.
     if (!user) {
-      return new Response(ctx, 'not found').fail();
+      return Response.fail(ctx, 'not found');
     }
 
     // Merge the existing user with the new data.
@@ -96,6 +96,6 @@ export class UserController {
     userRepo.save(updatedUser);
 
     // return
-    return new Response(ctx, updatedUser).success();
+    return Response.success(ctx, updatedUser);
   }
 }
