@@ -6,7 +6,9 @@ import {createKoaServer} from 'routing-controllers';
 import * as dotenv from 'dotenv';
 import * as winston from 'winston';
 import * as helmet from 'koa-helmet';
+import * as jwt from 'koa-jwt';
 import { logger } from './config/logger';
+import { config } from './config/config';
 
 // Load environment variables from .env file, where API keys and passwords are configured
 dotenv.config({ path: '.env' });
@@ -35,5 +37,12 @@ app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {
 
 // Logger middleware -> use winston as logger (logging.ts with config)
 app.use(logger(winston));
+
+// jwt
+app.use(jwt({
+  secret: config.jwtSecret
+}).unless({
+  path: [/\/user\/login/]
+}))
 
 export default app;
